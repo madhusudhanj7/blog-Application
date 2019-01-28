@@ -6,10 +6,11 @@ import { BlogService } from "../blog.service"
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [BlogService]
+
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-
+  public allBlogs;
 
   constructor(public blogService: BlogService) {
     console.log("Home component constructor called")
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log("Home component onInit called")
+    this.allBlogs = this.blogService.getAllBlogs();
+    console.log(this.allBlogs);
   }
   ngOnDestroy() {
     console.log("Home component destroyed")
