@@ -49,16 +49,12 @@ export class BlogService {
 
   public currentBlog;
 
-
-
   constructor() {
     console.log("service constructor is called");
   }
   public getAllBlogs(): any {
-
     return this.allBlogs;
   }
-
   public getSingleBlogInformation(currentBlogId): any {
     for (let blog of this.allBlogs) {
       if (blog.blogId == currentBlogId) {
@@ -68,6 +64,4 @@ export class BlogService {
     console.log(this.currentBlog);
     return this.currentBlog;
   }
-
-
 }
