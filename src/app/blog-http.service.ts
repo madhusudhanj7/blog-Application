@@ -9,14 +9,11 @@ import "rxjs/add/operator/do";
   providedIn: 'root'
 })
 export class BlogHttpService {
-  getSingleBlogInformation(myBlogId: string): any {
-    throw new Error("Method not implemented.");
-  }
 
-  public currentBlog;
+
   public allBlogs;
   public currenBlog;
-  public baseUrl = "https://blogapp.edwior.com/api/v1/blogs";
+  public baseUrl = "https://blogapp.edwisor.com/api/v1/blogs";
   public authToken = "MTExMDQyZjE5NGQ4ZmRlZmE4Zjk1MzI2OWRjOTdiODM2ZDA5YmEwYTdlNzRhNDQ2NmU1YTk5ZGMzODA2NmY0ZDUzMDk3YTdlMmQ1NWZkN2ZlY2U0ODM0YjQ1OGMyYWIzZDAzYmZiNjY1NjQ1ZWE0YjlkMTU1ZjcyN2FjNjhiOTY2ZDZi"
 
   constructor(private _http: HttpClient) {
@@ -35,8 +32,8 @@ export class BlogHttpService {
     return myResponse;
 
   }
-  public getSingleInformation(currentBlogId): any {
-    let myResponse = this._http.get(this.baseUrl + '/view' + '/' + currentBlogId + '?authToken' + this.authToken)
+  public getSingleBlogInformation(currentBlogId): any {
+    let myResponse = this._http.get(this.baseUrl + '/view' + '/' + currentBlogId + '?authToken=' + this.authToken)
     return myResponse;
   }
 

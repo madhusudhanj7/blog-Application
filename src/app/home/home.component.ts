@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.allBlogs = this.blogHttpService.getAllBlogs().subscribe(
 
       data => {
-        console.log("some error occured");
+        console.log("logging data");
+        console.log(data);
         this.allBlogs = data["data"];
       },
       error => {
