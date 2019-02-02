@@ -18,11 +18,11 @@
       <a class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
     </div>
     <div class="col-md-4">
-      <a class="btn btn-danger"> Delete</a>
+      <a class="btn btn-danger" (click)="deleteThisBlog()">Delete</a>
     </div>
     <div class="col-md-4">
 
-      <a class="btn btn-warning">Go Back</a>
+      <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back</a>
     </div>
   </div>
 </div>

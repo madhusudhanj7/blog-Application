@@ -32,18 +32,24 @@ export class BlogHttpService {
     return myResponse;
 
   }
+
   public getSingleBlogInformation(currentBlogId): any {
     let myResponse = this._http.get(this.baseUrl + '/view' + '/' + currentBlogId + '?authToken=' + this.authToken)
     return myResponse;
   }
 
-  // public getSingleBlogInformation(currentBlogId): any {
-  //   for (let blog of this.allBlogs) {
-  //     if (blog.blogId == currentBlogId) {
-  //       this.currentBlog = blog;
-  //     }
-  //   }
-  //   console.log(this.currentBlog);
-  //   return this.currentBlog;
-  // }
+  public createBlog(blogData): any {
+    let myResponse = this._http.post(this.baseUrl + '/create' + '?authToken=' + this.authToken, blogData)
+    return myResponse;
+  }
+  public deleteBlog(blogId): any {
+    let data = {}
+    let myResponse = this._http.post(this.baseUrl + '/' + blogId + '/delete' + '?authToken' + this.authToken, data)
+    return myResponse;
+  }
+  public editBlog(blogId, blogData): any {
+    let myResponse = this._http.put(this.baseUrl + '/' + blogId + '/edit' + '?authToken' + this.authToken, blogData)
+    return myResponse;
+  }
+
 }
